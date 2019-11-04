@@ -23,18 +23,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*result;
 	size_t	i;
 
-	l = -1;
-	while (l < len)
-	{
+	l = 0;
+	while (l < (len + start) && s[l] != '\0')
 		l++;
-		if (s[l] == '\0')
-			break ;
-	}
-	result = malloc(sizeof(char) * l);
+	result = (char*)malloc(sizeof(char) * (l - start));
 	if (!result)
 		return (NULL);
-	i = -1;
-	while (++i < l)
-		result[i] = s[i];
+	i = start;
+	while (i < l)
+	{
+		result[i - start] = s[i];
+		i++;
+	}
+	result[l] = '\0';
 	return (result);
 }
