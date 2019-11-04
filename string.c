@@ -13,6 +13,18 @@
 #include <stdlib.h>
 
 /*
+** Returns wether the given string contains the given character.
+*/
+
+short	ft_strcontain(const char *s, char c)
+{
+	while (*s != '\0')
+		if (*(s++) == c)
+			return (1);
+	return (0);
+}
+
+/*
 ** Allocate and returns a substring from the string given in argument.
 ** The substring begins at index `start` and is of maximum size `len`.
 */
@@ -68,5 +80,35 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (*cursor != '\0')
 		result[i++] = *(cursor++);
 	result[len - 1] = '\0';
+	return (result);
+}
+
+/*
+** Allocates and returns a copy of the string given as argument,
+** without the characters specified in the the set argument,
+** at the beginning and the end of the string.
+*/
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t		len;
+	char		*result;
+	const char	*cursor;
+
+	len = 0;
+	cursor = s1;
+	while (*(cursor++) != '\0')
+		len++;
+	result = (char*)malloc(sizeof(char) * len);
+	if (!result)
+		return (NULL);
+	cursor = result;
+	while (*s1 != '\0')
+	{
+		if (ft_strcontain(set, *s1))
+			*(cursor++) = *s1;
+		s1++;
+	}
+	*cursor = '\0';
 	return (result);
 }
