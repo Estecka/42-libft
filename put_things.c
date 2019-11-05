@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 16:12:37 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/05 16:27:44 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/05 17:39:40 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write (fd, &c, 1);
+	write(fd, &c, 1);
 }
 
 void	ft_putstr_fd(char *s, int fd)
 {
 	while (*s)
-		write (fd, s++, 1);
+		write(fd, s++, 1);
 }
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	while (*s)
 		write(fd, s++, 1);
