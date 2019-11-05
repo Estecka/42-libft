@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:58:31 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/05 12:18:04 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/05 13:07:20 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,23 +57,21 @@ short	ft_strcontain(const char *s, char c)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	l;
-	char	*result;
-	size_t	i;
+	unsigned int	end;
+	char			*result;
+	unsigned int	i;
 
-	l = 0;
-	while (l < (len + start) && s[l] != '\0')
-		l++;
-	result = (char*)malloc(sizeof(char) * (l - start));
+	end = 0;
+	while (s[end] != '\0' && end < (start + len))
+		end++;
+	len = end - start;
+	result = (char*)malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (NULL);
-	i = start;
-	while (i < l)
-	{
-		result[i - start] = s[i];
-		i++;
-	}
-	result[l] = '\0';
+	i = -1;
+	while (++i < len)
+		result[i] = s[i + start];
+	result[len] = '\0';
 	return (result);
 }
 
