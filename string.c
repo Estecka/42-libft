@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:58:31 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/05 11:26:53 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/05 12:18:04 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,24 +117,27 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t		len;
-	char		*result;
-	const char	*cursor;
+	unsigned int	start;
+	unsigned int	end;
+	unsigned int	i;
+	short			hasStarted;
 
-	len = 0;
-	cursor = s1;
-	while (*(cursor++) != '\0')
-		len++;
-	result = (char*)malloc(sizeof(char) * len);
-	if (!result)
-		return (NULL);
-	cursor = result;
-	while (*s1 != '\0')
-	{
-		if (ft_strcontain(set, *s1))
-			*(cursor++) = *s1;
-		s1++;
-	}
-	*cursor = '\0';
-	return (result);
+	hasStarted = 0;
+	start = 0;
+	end = 0;
+	i = -1;
+	while (s1[++i] != '\0')
+		if (!ft_strcontain(set, s1[i]))
+		{
+			if (!hasStarted)
+			{
+				hasStarted = 1;
+				start = i;
+			}
+			end = i;
+		}
+	if (hasStarted)
+		return (ft_substr(s1, start, end - start + 1));
+	else
+		return (ft_strdup(""));
 }
