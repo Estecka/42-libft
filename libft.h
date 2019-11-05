@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:43:50 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/04 13:02:07 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/05 11:29:17 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 # include <stdlib.h>
 
+char	*ft_strdup(const char *s1);
 short	*ft_strcontain(const char *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strtim(char const *s1, char const *set);
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif

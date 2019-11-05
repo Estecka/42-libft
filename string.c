@@ -6,11 +6,37 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:58:31 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/04 13:27:10 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/05 11:26:53 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
+/*
+** Allocates and duplicates the given string.
+*/
+
+char	*ft_strdup(const char *s1)
+{
+	size_t		len;
+	char		*result;
+
+	len = 0;
+	while (s1[len] != '\0')
+		len++;
+	result = (char*)malloc(sizeof(char) * (len + 1));
+	if (!result)
+		return (NULL);
+	result[len] = '\0';
+	while (len--)
+	{
+		result[len] = s1[len];
+		if (len == 0)
+			break ;
+	}
+	return (result);
+}
+
 
 /*
 ** Returns wether the given string contains the given character.
