@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:58:31 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/05 13:07:20 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/05 13:11:33 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ char	*ft_strdup(const char *s1)
 	}
 	return (result);
 }
-
 
 /*
 ** Returns wether the given string contains the given character.
@@ -118,23 +117,23 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	start;
 	unsigned int	end;
 	unsigned int	i;
-	short			hasStarted;
+	short			started;
 
-	hasStarted = 0;
+	started = 0;
 	start = 0;
 	end = 0;
 	i = -1;
 	while (s1[++i] != '\0')
 		if (!ft_strcontain(set, s1[i]))
 		{
-			if (!hasStarted)
+			if (!started)
 			{
-				hasStarted = 1;
+				started = 1;
 				start = i;
 			}
 			end = i;
 		}
-	if (hasStarted)
+	if (started)
 		return (ft_substr(s1, start, end - start + 1));
 	else
 		return (ft_strdup(""));
