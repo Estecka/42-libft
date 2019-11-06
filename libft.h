@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:43:50 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/06 12:07:34 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/06 12:25:31 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		ft_atoi_base(const char *str, const char *base);
 char	*ft_itoa(int n);
 char	*ft_itoa_base(int nbr, const char *base);
 
+void	*ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 
 #endif
