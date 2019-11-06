@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:43:50 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/06 09:41:47 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/06 10:47:59 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 
 int		indexof(char c, const char *str);
+int		ft_atoi(const char *str);
 int		ft_atoi_base(const char *str, const char *base);
+char	*ft_itoa(int n);
 char	*ft_itoa_base(int nbr, const char *base);
 
 #endif
