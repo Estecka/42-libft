@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:17:50 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/05 16:02:50 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/06 11:52:41 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,27 @@ char	**ft_split(char const *s, char c)
 		}
 	results[wordcount] = NULL;
 	return (results);
+}
+
+/*
+** Applies the function `f` to each character of the given string
+** to create a new string resulting fromsuccessive applications
+** of f.
+*/
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	int		len;
+	char	*result;
+
+	len = 0;
+	while (s[len])
+		len++;
+	result = (char*)malloc(sizeof(char) * (len + 1));
+	if (!result)
+		return (NULL);
+	result[len] = '\0';
+	while (--len >= 0)
+		result[len] = f(len, s[len]);
+	return (result);
 }
