@@ -6,13 +6,15 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:05:07 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/06 12:31:25 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/06 15:42:34 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_bzero(void *s, size_t n)
+// untested
+
+void	ft_bzero(void *s, size_t n)
 {
 	char	*c;
 	size_t	i;
@@ -28,6 +30,8 @@ void	*ft_bzero(void *s, size_t n)
 ** and fills the memory with 0's.
 */
 
+//untested
+
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*result;
@@ -36,4 +40,69 @@ void	*ft_calloc(size_t count, size_t size)
 	result = malloc(size);
 	ft_bzero(result, size);
 	return (result);
+}
+
+/*
+** Writes `len` bytes of value `c` to the string `b`.
+*/
+
+//untested
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	char	*str;
+	size_t	i;
+
+	str = (char*)b;
+	i = 0;
+	while (i < len)
+		str[i++] = (unsigned char)c;
+	return (b);
+}
+
+/*
+** Copies `n` bytes from memory area `src` to `dst`
+*/
+
+//untested
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((char*)dst)[i] = ((char*)src)[i];
+		i++;
+	}
+	return (dst);
+}
+
+/*
+** Copies bytes from string `src` to `dst`.
+** If the character c occurs, the copy stops,
+** and a pointer to the byte after the copy of c is returned;
+** Otherwise, n bytes are copied, and NULL is returned.
+*/
+
+//untested
+
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+{
+	size_t	i;
+	char	*fro;
+	char	*to;
+
+	fro = (char*)src;
+	to = (char*)dst;
+	i = 0;
+	while (i < n)
+	{
+		to[i] = fro[i];
+		i++;
+		if ((unsigned char)to[i] == (unsigned char)c)
+			return (&to[i]);
+	}
+	return (NULL);
 }
