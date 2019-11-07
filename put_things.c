@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 16:12:37 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/06 10:57:50 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/07 14:54:54 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,13 @@ void	ft_putendl_fd(char *s, int fd)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
+	char	c;
 
-	str = ft_itoa(n);
-	ft_putstr_fd(str, fd);
-	free(str);
+	if (n <= -10 || 10 <= n)
+		ft_putnbr_fd(n / 10, fd);
+	else if (n < 0)
+		write(fd, "-", 1);
+	n %= 10;
+	c = '0' + (n < 0 ? -n : n);
+	write(fd, &c, 1);
 }
