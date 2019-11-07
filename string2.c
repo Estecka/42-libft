@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:17:50 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/06 11:52:41 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/07 12:03:27 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,73 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	while (--len >= 0)
 		result[len] = f(len, s[len]);
 	return (result);
+}
+
+/*
+** Computes the lenght of `s` until the Nul terminator (excluded).
+*/
+
+//untested
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	len;
+
+	len = 0;
+	while (*(s++))
+		len++;
+	return (len);
+}
+
+/*
+** Copies up to `dstsize` bytes from `src` to `dst`.
+** Null terminator is garanteed and included in `dstsize`;
+*/
+
+// untested
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < dstsize)
+	{
+		dst[i] = src[i];
+		if (!src[i])
+			break ;
+		i++;
+	}
+	if (i >= dstsize)
+		dst[dstsize - 1] = '\0';
+	return (i);
+}
+
+/*
+** Appends `src` at the end of `src`.
+** `dst` will be up to `dstsize` bytes long, Null terminator included.
+** The result is Null terminated, unless `dstsize` is smaller than `len(dst)`.
+** Returns the original length of `dst` + the original length of `src`.
+*/
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	while (dst[i])
+		i++;
+	j = 0;
+	while (1)
+	{
+		if (i == dstsize - 1)
+			dst[i] = '\0';
+		else if (i < dstsize)
+			dst[i] = src[j];
+		if (src[j] == '\0')
+			return (i);
+		i++;
+		j++;
+	}
 }
