@@ -16,6 +16,9 @@ ${NAME}: ${OBJS}
 bonus: ${OBJS} ${OBJ_BONUS}
 	ar rcs ${NAME} ${OBJS} ${OBJS_SRCS} 
 
+test:
+	cc *.c -Wall -Wextra
+
 all: bonus
 
 clean:
@@ -28,4 +31,4 @@ fclean: clean
 
 re: fclean ${NAME}
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re bonus test
