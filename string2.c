@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:17:50 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/08 13:23:08 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/08 15:50:46 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,16 +96,16 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
-	while (i < dstsize)
+	while (1)
 	{
-		dst[i] = src[i];
-		if (!src[i])
-			break ;
+		if (i == dstsize - 1)
+			dst[i] = '\0';
+		else if (i < dstsize)
+			dst[i] = src[i];
+		if (src[i] == '\0')
+			return (i);
 		i++;
 	}
-	if (i >= dstsize)
-		dst[dstsize - 1] = '\0';
-	return (i);
 }
 
 /*
