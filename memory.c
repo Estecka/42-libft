@@ -6,13 +6,11 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:05:07 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/06 15:42:34 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/07 16:37:01 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-// untested
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -30,8 +28,6 @@ void	ft_bzero(void *s, size_t n)
 ** and fills the memory with 0's.
 */
 
-//untested
-
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*result;
@@ -45,8 +41,6 @@ void	*ft_calloc(size_t count, size_t size)
 /*
 ** Writes `len` bytes of value `c` to the string `b`.
 */
-
-//untested
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -63,8 +57,6 @@ void	*ft_memset(void *b, int c, size_t len)
 /*
 ** Copies `n` bytes from memory area `src` to `dst`
 */
-
-//untested
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -86,23 +78,21 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 ** Otherwise, n bytes are copied, and NULL is returned.
 */
 
-//untested
-
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t	i;
-	char	*fro;
-	char	*to;
+	size_t			i;
+	unsigned char	*fro;
+	unsigned char	*to;
 
-	fro = (char*)src;
-	to = (char*)dst;
+	fro = (unsigned char*)src;
+	to = (unsigned char*)dst;
 	i = 0;
 	while (i < n)
 	{
 		to[i] = fro[i];
+		if (to[i] == (unsigned char)c)
+			return (&(to[i + 1]));
 		i++;
-		if ((unsigned char)to[i] == (unsigned char)c)
-			return (&to[i]);
 	}
 	return (NULL);
 }

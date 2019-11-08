@@ -6,11 +6,9 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 16:29:03 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/06 16:32:55 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/07 15:28:57 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//untested
 
 int	ft_toupper(int c)
 {
@@ -18,8 +16,6 @@ int	ft_toupper(int c)
 		c += 'A' - 'a';
 	return (c);
 }
-
-// untested
 
 int	ft_tolower(int c)
 {

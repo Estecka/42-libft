@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 12:10:07 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/07 14:43:54 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/07 15:45:00 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 /*
 ** Locates the last occurence of `c` in `s` and points to it.
 */
-
-//untested
 
 char	*ft_strrchr(const char *s, int c)
 {

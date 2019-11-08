@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:17:50 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/07 12:03:27 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/07 15:40:15 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 ** Computes the lenght of `s` until the Nul terminator (excluded).
 */
 
-//untested
-
 size_t	ft_strlen(const char *s)
 {
 	size_t	len;
@@ -92,8 +90,6 @@ size_t	ft_strlen(const char *s)
 ** Copies up to `dstsize` bytes from `src` to `dst`.
 ** Null terminator is garanteed and included in `dstsize`;
 */
-
-// untested
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

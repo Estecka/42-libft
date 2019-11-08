@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 14:05:49 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/06 15:41:59 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/08 10:56:40 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,14 @@
 ** The memory areas may overlap, in which case dst will overwrite src.
 */
 
-//untested
-
-void	*ft_memove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*fro;
 	char	*to;
 	size_t	i;
 	short	sign;
 
-	to = (char*)src;
+	to = (char*)dst;
 	fro = (char*)src;
 	sign = dst < src ? +1 : -1;
 	i = dst < src ? 0 : len - 1;
@@ -44,8 +42,6 @@ void	*ft_memove(void *dst, const void *src, size_t len)
 ** Locates the first occurence of `c` in `s`.
 */
 
-//untested
-
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
@@ -55,6 +51,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	{
 		if (*(unsigned char*)s == (unsigned char)c)
 			return ((void*)s);
+		s++;
 		i++;
 	}
 	return (NULL);
@@ -65,9 +62,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 ** Returns the difference between the first different pair.
 */
 
-//untested
-
-int		memcmp(const void *s1, const void *s2, size_t n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*c1;
 	unsigned char	*c2;

@@ -6,11 +6,9 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 15:52:49 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/06 16:37:46 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/07 15:28:48 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//untested
 
 int	ft_isalpha(int c)
 {
@@ -18,28 +16,20 @@ int	ft_isalpha(int c)
 		|| ('a' <= c && c <= 'z'));
 }
 
-//untested
-
 int	ft_isdigit(int c)
 {
 	return ('0' <= c && c <= '9');
 }
-
-//untested;
 
 int	ft_isalnum(int c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c));
 }
 
-//untested
-
 int	ft_isascii(int c)
 {
 	return (0x0 <= c && c <= 0x7f);
 }
-
-//untested
 
 int	ft_isprint(int c)
 {
