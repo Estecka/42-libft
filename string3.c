@@ -6,11 +6,27 @@
 /*   By: abaur <abaur@student42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 12:10:07 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/07 15:45:00 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/08 16:17:33 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
+/*
+** Points to the first occurence of `c` in `s`
+*/
+
+char	*ft_strchr(const char *s, int c)
+{
+	while (1)
+	{
+		if (*s == c)
+			return ((char*)s);
+		if (!*s)
+			return (NULL);
+		s++;
+	}
+}
 
 /*
 ** Locates the last occurence of `c` in `s` and points to it.
