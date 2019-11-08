@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:05:07 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/07 16:37:01 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/08 12:34:13 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void	*ft_calloc(size_t count, size_t size)
 
 	size *= count;
 	result = malloc(size);
-	ft_bzero(result, size);
+	if (result)
+		ft_bzero(result, size);
 	return (result);
 }
 
