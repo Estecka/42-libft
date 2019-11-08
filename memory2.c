@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 14:05:49 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/08 14:26:16 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/08 14:27:34 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,9 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (*c1 != *c2)
-			return (c1 - c2);
+		if (*c1 != *c2){
+			return (*c1 - *c2);
+}
 		c1++;
 		c2++;
 		i++;
