@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:58:31 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/05 13:11:33 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/08 15:04:20 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	end = 0;
 	while (s[end] != '\0' && end < (start + len))
 		end++;
-	len = end - start;
+	len = start < end ? end - start : 0;
 	result = (char*)malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (NULL);
