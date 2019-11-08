@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 14:05:49 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/08 10:56:40 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/08 14:26:16 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t	i;
 	short	sign;
 
+	if (!dst && !src)
+		return (NULL);
 	to = (char*)dst;
 	fro = (char*)src;
 	sign = dst < src ? +1 : -1;
