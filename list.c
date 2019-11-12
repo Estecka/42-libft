@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 16:48:50 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/12 11:26:37 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/12 11:40:05 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,35 @@ t_list	*ft_lstnew(void *content)
 	result->content = content;
 	result->next = NULL;
 	return (result);
+}
+
+/*
+** Returns the size of the list.
+*/
+
+int		ft_lstsize(t_list *lst)
+{
+	int	i;
+
+	if (!lst)
+		return (0);
+	i = 1;
+	while (lst = lst->next)
+		i++;
+	return (i);
+}
+
+/*
+** Returns the last element of the list.
+*/
+
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
 /*
