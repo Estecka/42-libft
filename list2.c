@@ -6,9 +6,12 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 11:50:18 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/12 13:51:07 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/12 14:13:51 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
+#include "libft_list.h"
 
 /*
 ** Frees the memory allocated to the element
@@ -25,20 +28,22 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 /*
 ** Frees the memory allocated to the given element and all the following,
 ** and deletes their content with the given method.
+** Sets lst to null.
 */
 
-void	ft_lstclear(t_list *lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	next;
+	t_list	*next;
 
-	while (lst)
+	while (*lst)
 	{
-		next = lst->next;
+		next = (*lst)->next;
 		if (del)
-			del(lst->content);
-		free(lst);
-		lst = next;
+			del((*lst)->content);
+		free(*lst);
+		*lst = next;
 	}
+	*lst = NULL;
 }
 
 /*
@@ -76,7 +81,7 @@ void	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*))
 		dst->next = ft_lstnew(NULL);
 		if (!dst->next)
 		{
-			ft_lstclear(result, del);
+			ft_lstclear(&result, del);
 			return (NULL);
 		}
 		dst->next->content = f(lst->next->content);
