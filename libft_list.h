@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 17:23:52 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/12 11:51:50 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/12 12:52:11 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_lstadd_back(t_list **alst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 
-//void	ft_lstiter(t_list *lst, void (*f)(void*));
-//t_list	*ft_listmap(t_list *lst, void *(*f)(void*));
+void	ft_lstiter(t_list *lst, void (*f)(void*));
+t_list	*ft_listmap(t_list *lst, void *(*f)(void*));
 
 #endif
