@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 11:50:18 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/12 14:13:51 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/13 14:42:36 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void*))
 ** Del will be used to clear the result in case an issue arises.
 */
 
-void	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*))
 {
 	t_list	*result;
 	t_list	*dst;
