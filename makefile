@@ -1,5 +1,5 @@
 SRCS	= character.c character2.c integer.c integer2.c memory.c memory2.c put_things.c string.c string2.c string3.c
-SRCS_BONUS =
+SRCS_BONUS = list.c list2.c
 
 OBJS	= ${SRCS:.c=.o}
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
@@ -13,11 +13,8 @@ CFLAGS	= -Wall -Wextra -Werror
 ${NAME}: ${OBJS}
 	ar rcs ${NAME} ${OBJS}
 
-bonus: ${OBJS} ${OBJ_BONUS}
-	ar rcs ${NAME} ${OBJS} ${OBJS_SRCS} 
-
-test:
-	cc *.c -Wall -Wextra
+bonus: ${OBJS} ${OBJS_BONUS}
+	ar rcs ${NAME} ${OBJS} ${OBJS_BONUS}
 
 all: bonus
 
@@ -31,4 +28,4 @@ fclean: clean
 
 re: fclean ${NAME}
 
-.PHONY: all clean fclean re bonus test
+.PHONY: all clean fclean re bonus
