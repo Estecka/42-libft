@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 16:48:50 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/14 17:08:41 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/14 17:13:37 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ t_list	*ft_lstlast(t_list *lst)
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
+	if (!alst || !new)
+		return ;
 	new->next = *alst;
 	(*alst = new);
 }
@@ -78,6 +80,8 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 {
 	t_list	*cursor;
 
+	if (!alst)
+		return ;
 	if (!*alst)
 		return (void)(*alst = new);
 	cursor = *alst;

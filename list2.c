@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 11:50:18 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/14 17:09:02 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/14 17:17:43 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
+	if (!lst)
+		return ;
 	if (del)
 		del(lst->content);
 	free(lst);
@@ -35,6 +37,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*next;
 
+	if (!lst)
+		return ;
 	while (*lst)
 	{
 		next = (*lst)->next;
@@ -52,6 +56,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 void	ft_lstiter(t_list *lst, void (*f)(void*))
 {
+	if (!f)
+		return ;
 	while (lst)
 	{
 		f(lst->content);
@@ -69,7 +75,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*))
 	t_list	*result;
 	t_list	*dst;
 
-	if (!lst)
+	if (!lst || !f)
 		return (NULL);
 	result = ft_lstnew(NULL);
 	if (!result)
