@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:58:31 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/08 15:04:20 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/14 17:35:03 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strdup(const char *s1)
 
 short	ft_strcontain(const char *s, char c)
 {
-	while (*s != '\0')
+	while (s && *s != '\0')
 		if (*(s++) == c)
 			return (1);
 	return (0);
@@ -60,6 +60,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*result;
 	unsigned int	i;
 
+	if (!s)
+		return (NULL);
 	end = 0;
 	while (s[end] != '\0' && end < (start + len))
 		end++;
@@ -87,20 +89,20 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	len = 1;
 	cursor = s1;
-	while (*(cursor++) != '\0')
+	while (s1 && *(cursor++) != '\0')
 		len++;
 	cursor = s2;
-	while (*(cursor++) != '\0')
+	while (s2 && *(cursor++) != '\0')
 		len++;
 	result = (char*)malloc(sizeof(char) * len);
 	if (!result)
 		return (NULL);
 	i = 0;
 	cursor = s1;
-	while (*cursor != '\0')
+	while (s1 && *cursor)
 		result[i++] = *(cursor++);
 	cursor = s2;
-	while (*cursor != '\0')
+	while (s2 && *cursor)
 		result[i++] = *(cursor++);
 	result[len - 1] = '\0';
 	return (result);
@@ -123,7 +125,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	end = 0;
 	i = -1;
-	while (s1[++i] != '\0')
+	while (s1 && s1[++i] != '\0')
 		if (!ft_strcontain(set, s1[i]))
 		{
 			if (!started)

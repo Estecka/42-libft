@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:17:50 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/08 15:50:46 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/14 17:30:07 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	**ft_split(char const *s, char c)
 
 	wordcount = 1;
 	i = -1;
-	while (s[++i])
+	while (s && s[++i])
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
 			wordcount++;
 	if (!(results = (char**)malloc(sizeof(char*) * wordcount)))
@@ -37,7 +37,7 @@ char	**ft_split(char const *s, char c)
 	i = -1;
 	start = 0;
 	wordcount = 0;
-	while (s[++i])
+	while (s && s[++i])
 		if (s[i] != c)
 		{
 			if (i == 0 || s[i - 1] == c)
@@ -60,6 +60,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		len;
 	char	*result;
 
+	if (!s)
+		return (NULL);
 	len = 0;
 	while (s[len])
 		len++;
@@ -68,7 +70,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	result[len] = '\0';
 	while (--len >= 0)
-		result[len] = f(len, s[len]);
+		result[len] = f ? f(len, s[len]) : 0;
 	return (result);
 }
 
@@ -95,6 +97,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
+	if (!src || !dst)
+		return 0;
 	i = 0;
 	while (1)
 	{
