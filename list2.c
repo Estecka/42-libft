@@ -6,12 +6,12 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 11:50:18 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/13 14:42:36 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/14 17:09:02 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft_list.h"
+#include "libft.h"
 
 /*
 ** Frees the memory allocated to the element
