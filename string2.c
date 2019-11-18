@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:17:50 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/14 17:30:07 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/15 16:23:23 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 }
 
 /*
-** Appends `src` at the end of `src`.
+** Appends `src` at the end of `dst`.
 ** `dst` will be up to `dstsize` bytes long, Null terminator included.
 ** The result is Null terminated, unless `dstsize` is smaller than `len(dst)`.
 ** Returns min(len(dst), dstsize) + len(src).
