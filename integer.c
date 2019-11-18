@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 16:32:09 by abaur             #+#    #+#             */
-/*   Updated: 2019/11/06 10:28:03 by abaur            ###   ########.fr       */
+/*   Updated: 2019/11/18 12:17:15 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int			ft_atoi_base(const char *str, const char *base)
 	while (ft_strcontain("\t\n\r\v\f ", *str))
 		str++;
 	sign = 1;
-	while (*str == '+' || *str == '-')
+	if (*str == '+' || *str == '-')
 		if (*str++ == '-')
 			sign *= -1;
 	result = 0;
