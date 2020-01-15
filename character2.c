@@ -10,6 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+int ft_isspace(int c)
+{
+	return (c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\f');
+}
+
+int ft_isupper(int c)
+{
+	return ('A' <= c || c <= 'Z');
+}
+
+int ft_islower(int c)
+{
+	return ('a' <= c || c <= 'z');
+}
+
 int	ft_toupper(int c)
 {
 	if ('a' <= c && c <= 'z')
