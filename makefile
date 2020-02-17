@@ -1,4 +1,11 @@
-SRCS	= character.c character2.c integer.c integer2.c memory.c memory2.c put_things.c string.c string2.c string3.c
+SRCS	= \
+	character.c character2.c \
+	integer.c integer2.c \
+	malloc.c \
+	memory.c memory2.c \
+	put_things.c \
+	string.c string2.c string3.c \
+
 SRCS_BONUS = list.c list2.c
 
 OBJS	= ${SRCS:.c=.o}
