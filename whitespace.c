@@ -22,9 +22,9 @@ short	ft_isspace(int c)
 ** 	If none are found, it will point to the \0 at the end of the string.
 */
 
-char	*ft_skipspace(char *s)
+char	*ft_skipspace(const char *s)
 {
 	while (*s && ft_isspace(*s))
 		s++;
-	return (s);
+	return (char*)(s);
 }

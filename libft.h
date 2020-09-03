@@ -36,7 +36,7 @@ int			ft_toupper(int c);
 int			ft_tolower(int c);
 short		ft_isspace(int c);
 
-char		*ft_skipspace(char *s);
+char		*ft_skipspace(const char *s);
 char		*ft_strdup(const char *s1);
 short		*ft_strcontain(const char *s, char c);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
