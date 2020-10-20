@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 00:43:38 by abaur             #+#    #+#             */
-/*   Updated: 2020/10/17 02:25:36 by abaur            ###   ########.fr       */
+/*   Updated: 2020/10/20 10:47:33 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 */
 
 char	*ft_strdup(const char *src);
+
+/*
+** Duplicates an array and all of the strings int contains.
+** @param const char*const* array	The array to duplicate.
+** @return char**	An allocated copy of the array. Or NULL in case of error.
+*/
+
+char	**ft_strdupr(const char*const *array);
 
 /*
 ** Duplicates a portion of the given string.

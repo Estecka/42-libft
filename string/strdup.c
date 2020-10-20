@@ -6,11 +6,12 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:58:31 by abaur             #+#    #+#             */
-/*   Updated: 2020/10/17 15:39:59 by abaur            ###   ########.fr       */
+/*   Updated: 2020/10/20 11:00:05 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft_string.h"
+#include "../libft_malloc.h"
 
 #include <stdlib.h>
 
@@ -31,6 +32,33 @@ extern char	*ft_strdup(const char *s1)
 		result[len] = s1[len];
 		if (len == 0)
 			break ;
+	}
+	return (result);
+}
+
+extern char	**ft_strdupr(const char*const *array)
+{
+	size_t	len;
+	char	**result;
+
+	len = 0;
+	while (array[len] != NULL)
+		len++;
+	result = malloc(sizeof(char*) * (len + 1));
+	if (!result)
+		return (NULL);
+	result[len] = NULL;
+	while (len--)
+	{
+		result[len] = ft_strdup(array[len]);
+		if (!result[len])
+		{
+			freearray((void**)result);
+			free(result);
+			return (NULL);
+		}
+		if (len == 0)
+			break;
 	}
 	return (result);
 }
