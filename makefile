@@ -20,6 +20,7 @@ SRCS	= \
 	memory/meminit.c \
 	memory/memcpy.c \
 	memory/misc.c \
+	malloc/free.c \
 	malloc/malloc.c \
 
 SRCS_BONUS = list.c list2.c
