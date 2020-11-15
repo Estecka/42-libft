@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:17:50 by abaur             #+#    #+#             */
-/*   Updated: 2020/10/17 15:53:05 by abaur            ###   ########.fr       */
+/*   Updated: 2020/11/15 16:39:09 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ extern size_t	ft_strlen(const char *s)
 
 	len = 0;
 	while (*(s++))
+		len++;
+	return (len);
+}
+
+extern size_t	ft_ptrlen(const void **array)
+{
+	size_t	len;
+
+	len = 0;
+	while (*(array++))
 		len++;
 	return (len);
 }
