@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:43:50 by abaur             #+#    #+#             */
-/*   Updated: 2020/11/19 19:57:49 by abaur            ###   ########.fr       */
+/*   Updated: 2020/11/19 21:47:08 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "libft_char.h"
 # include "libft_malloc.h"
 # include "libft_memory.h"
+# include "libft_norme.h"
 # include "libft_string.h"
 # include "libft_write.h"
 

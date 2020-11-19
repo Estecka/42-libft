@@ -3,11 +3,14 @@ HDRS = \
 	libft_char.h \
 	libft_malloc.h \
 	libft_memory.h \
+	libft_norme.h \
 	libft_string.h \
 	libft_write.h \
 
 SRCS	= \
 	integer.c integer2.c \
+	norme/ternary.c \
+	norme/either.c \
 	write/put_things.c \
 	write/put_things_fd.c \
 	write/dput_things.c \
