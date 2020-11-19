@@ -11,6 +11,7 @@ SRCS	= \
 	integer.c integer2.c \
 	norme/ternary.c \
 	norme/either.c \
+	norme/ft_set.c \
 	write/put_things.c \
 	write/put_things_fd.c \
 	write/dput_things.c \
