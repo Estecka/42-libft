@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 19:17:09 by abaur             #+#    #+#             */
-/*   Updated: 2020/10/22 12:58:21 by abaur            ###   ########.fr       */
+/*   Updated: 2020/11/19 19:49:40 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,25 @@ void		*ft_calloc(size_t count, size_t type);
 void*const	*malloc2d(size_t width, size_t height, size_t type);
 
 /*
+** Safely frees a pointer.
+** Null pointers are ignored.
+** The pointer is set to NULL afterward.
+** @param void**	A pointer to the variable that contains the pointer that nee
+** ds to be freed.
+** @return 1
+*/
+
+short		ft_free(void **ptr);
+short		ft_free4(void **ptr1, void **ptr2, void **ptr3, void **ptr4);
+
+/*
 ** Frees all pointers in a null-terminated array.
 ** This does NOT free the array itself.
 ** @param void** array	A pointer to the array.
+** @return 1
 */
 
-void		freearray(void **array);
+short		freearray(void **array);
 
 /*
 ** Frees n consecutive pointers in an array.
@@ -52,8 +65,9 @@ void		freearray(void **array);
 ** This will NOT stop at any null-terminator, but safely ignores them.
 ** @param void** array	A pointer to the array.
 ** @param size_t size	The amount of elements to browse through.
+** @return 1
 */
 
-void		freearrayn(void **array, size_t size);
+short		freearrayn(void **array, size_t size);
 
 #endif
