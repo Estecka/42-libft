@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 19:17:09 by abaur             #+#    #+#             */
-/*   Updated: 2020/10/22 12:58:21 by abaur            ###   ########.fr       */
+/*   Updated: 2020/11/19 19:15:58 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,18 @@
 void		*ft_calloc(size_t count, size_t type);
 
 /*
+** Allocates a null-terminated array of objects.
+** The array will be initialized with zero's.
+** @param size_t count	The amount of elements in the array.
+** @param size_t type	The size of a single element.
+** @return void* The allocated memory, or NULL if allocation failed.
+*/
+
+void		*malloc1d(size_t type, size_t length);
+
+/*
 ** Allocates a two dimensional array in a single memory space.
+** Both axes of the array are null-terminated.
 ** The array's elements are accessible via `array[x][y]`.
 ** The array's elements are initialized with zero's;
 ** @param size_t width	The number of columns. (x)
@@ -36,7 +47,7 @@ void		*ft_calloc(size_t count, size_t type);
 ** @return void*const*	The allocated memory, or NULL if it failed.
 */
 
-void*const	*malloc2d(size_t width, size_t height, size_t type);
+void*const	*malloc2d(size_t type, size_t width, size_t height);
 
 /*
 ** Frees all pointers in a null-terminated array.
