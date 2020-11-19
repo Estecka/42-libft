@@ -6,12 +6,12 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 16:12:37 by abaur             #+#    #+#             */
-/*   Updated: 2019/12/02 16:58:12 by abaur            ###   ########.fr       */
+/*   Updated: 2020/11/19 19:59:38 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft.h"
+#include "../libft.h"
 
 void	ft_putchar(char c)
 {

@@ -4,10 +4,13 @@ HDRS = \
 	libft_malloc.h \
 	libft_memory.h \
 	libft_string.h \
+	libft_write.h \
 
 SRCS	= \
 	integer.c integer2.c \
-	put_things.c put_things_fd.c \
+	write/put_things.c \
+	write/put_things_fd.c \
+	write/dput_things.c \
 	char/is_word.c \
 	char/is_special.c \
 	char/to_case.c \

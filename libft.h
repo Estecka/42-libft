@@ -6,7 +6,7 @@
 /*   By: abaur <abaur@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 11:43:50 by abaur             #+#    #+#             */
-/*   Updated: 2020/10/22 12:57:25 by abaur            ###   ########.fr       */
+/*   Updated: 2020/11/19 19:57:49 by abaur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,9 @@
 # include "libft_malloc.h"
 # include "libft_memory.h"
 # include "libft_string.h"
+# include "libft_write.h"
 
 # include <stdlib.h>
-
-void		ft_putchar(char c);
-void		ft_putstr(const char *s);
-void		ft_putendl(const char *s);
-void		ft_putnbr(int n);
-
-void		ft_putchar_fd(char c, int fd);
-void		ft_putstr_fd(const char *s, int fd);
-void		ft_putendl_fd(const char *s, int fd);
-void		ft_putnbr_fd(int n, int fd);
 
 int			ft_atoi(const char *str);
 int			ft_atoi_base(const char *str, const char *base);
